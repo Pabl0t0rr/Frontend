@@ -1,35 +1,70 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react';
 import './App.css'
+import Sum from './components/Sum';
+import Subtraction from './components/Subtraction';
+import Divide from './components/Divide';
+import Multiply from './components/Multiply';
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+const App = () => {
+const [valor1, setValor1] = useState<number>(0) // Para null = useState <number | null> (null)
+const [valor2, setValor2] = useState<number>(0) // Para null = useState <number | null> (null)
+const [result, setResult] = useState<number>(0) // Para null = useState <number | null> (null)
+const [operation, setOperation] = useState<string>("") // Para null = useState <string | null> (null)
+
+const setValor = (n : number) =>{
+  if(valor1 === 0){
+    setValor1(n)
+  }
+
+  if(valor2 !== 0){
+    setValor2(n)
+  }
+
+  switch(operation){
+    case "+":
+      setResult(Sum(valor1, valor2))
+      break;
+    case "-":
+      setResult(Subtraction(valor1, valor2))
+      break;
+    case "/":
+      setResult(Divide(valor1, valor2))
+      break;
+    case "*":
+      setResult(Multiply(valor1, valor2))
+      break;
+    case "=":
+      setResult(result)
+      break;
+  }
+
 }
+  return (<div> {/* Pantalla principal */}
+            <h1>Calculator</h1>
+            <p> Resultado:  {result} </p>
+              <div className = "button-panel"> {/* Pantalla para englobar los botones */}
+                  <div className = "number-buttons"> {/*Botones de los numeros */}
+                    <button onClick={() => setValor(1)}> 1 </button>
+                    <button onClick={() => setValor(2)}> 2 </button>
+                    <button onClick={() => setValor(3)}> 3 </button>
+                    <button onClick={() => setValor(4)}> 4 </button>
+                    <button onClick={() => setValor(5)}> 5 </button>
+                    <button onClick={() => setValor(6)}> 6 </button>
+                    <button onClick={() => setValor(7)}> 7 </button>
+                    <button onClick={() => setValor(8)}> 8 </button>
+                    <button onClick={() => setValor(9)}> 9 </button>
+                  </div>
+
+                  <div className = "operation-buttons"> {/* Botones de las operaciones */}
+                    <button onClick={() => setOperation("+")}> + </button>
+                    <button onClick= {() => setOperation("-")}> - </button>
+                    <button onClick= {() => setOperation("/")}> / </button>
+                    <button onClick= {() => setOperation("*")}> * </button>
+                  </div>
+              </div> 
+          </div>);
+};
+
 
 export default App
