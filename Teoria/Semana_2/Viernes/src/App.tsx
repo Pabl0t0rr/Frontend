@@ -13,14 +13,26 @@ const [result, setResult] = useState<number>(0) // Para null = useState <number 
 const [operation, setOperation] = useState<string>("") // Para null = useState <string | null> (null)
 
 const setValor = (n : number) =>{
+  
   if(valor1 === 0){
     setValor1(n)
+    return;
   }
-
-  if(valor2 !== 0){
-    setValor2(n)
+  if (valor2 === 0){
+    setValor2(n);
+    return;
   }
+    //Para resetear los valores
+  if(operation === "=" || result !== null){
+    setValor1(0);
+    setValor2(0);
+    setResult(0);
+    setOperation("");
+    return;
+  }
+}
 
+const calcular = () => {
   switch(operation){
     case "+":
       setResult(Sum(valor1, valor2))
@@ -33,16 +45,16 @@ const setValor = (n : number) =>{
       break;
     case "*":
       setResult(Multiply(valor1, valor2))
-      break;
-    case "=":
-      setResult(result)
-      break;
+      break;       
+    default:
+      return;
   }
-
+    
+  
 }
   return (<div> {/* Pantalla principal */}
             <h1>Calculator</h1>
-            <p> Resultado:  {result} </p>
+            <p> Operacion:  {valor1} {operation} {valor2} = {result} </p>
               <div className = "button-panel"> {/* Pantalla para englobar los botones */}
                   <div className = "number-buttons"> {/*Botones de los numeros */}
                     <button onClick={() => setValor(1)}> 1 </button>
@@ -61,6 +73,7 @@ const setValor = (n : number) =>{
                     <button onClick= {() => setOperation("-")}> - </button>
                     <button onClick= {() => setOperation("/")}> / </button>
                     <button onClick= {() => setOperation("*")}> * </button>
+                    <button onClick={calcular}> = </button>
                   </div>
               </div> 
           </div>);

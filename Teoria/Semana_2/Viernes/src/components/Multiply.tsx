@@ -1,7 +1,7 @@
 
 
-const Multiply = (anterior : number, actual : number) => {
-    const result = anterior * actual;
+const Multiply = (valor1 : number, valor2 : number) => {
+    const result = valor1 * valor2;
     console.log(result)
     return result;
 }

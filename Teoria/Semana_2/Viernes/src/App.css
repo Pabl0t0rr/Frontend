@@ -1,23 +1,31 @@
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
 .button-panel {
+  max-width: 80%;
   display: flex;
-  flex-flow : center wrap;
+  flex-flow : row wrap;
+  gap: 5%;
 }
 
-.number-buttons {
+.number-buttons  {
+  max-width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-flow: row wrap;
 }
 
+.number-buttons button {
+  width: 33.33%;
+}
+
 .operation-buttons {
+   max-width: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
