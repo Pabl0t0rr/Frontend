@@ -15,6 +15,7 @@ const App = () => {
   return (
 
     <div>
+      <p>La palabra escrita es: {palabra}</p>
       <input onChange={ (e) => {setPalabra(e.target.value)}}></input> {/* para meter textos */}
     </div>
 
