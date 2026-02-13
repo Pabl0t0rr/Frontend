@@ -1,23 +1,21 @@
-import { useEffect } from 'react';
 import { useState } from 'react';
 import './App.css';
-import {api} from "./api/api";
+import type { CharacterT} from './types';
+import { Character }from './components/Character';
 
 const App = () => {
-
-  const [palabra, setPalabra] = useState<string>("");
-
-  useEffect(() => {
-    api.get("/character").then ((e) => console.log(e.data));
-  }, []) //Si se le pasa una variable de estado en el [] se volvera a ejecutar cada vez que se actualiza el estado
+  const [character, setCharacter] = useState<CharacterT | null>(null);
+  const [id, setId] = useState<number>(1);
 
   return (
-
+    <>
     <div>
-      <p>La palabra escrita es: {palabra}</p>
-      <input onChange={ (e) => {setPalabra(e.target.value)}}></input> {/* para meter textos */}
+      <p>El id escrito es: {id}</p>
+      <input value = {id}
+      onChange={ (e) => {setId(Number(e.target.value))}}></input> {/* para meter textos */}
     </div>
-
+    <Character id={id}/>
+   </>
   )
 }
 

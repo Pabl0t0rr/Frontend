@@ -1,0 +1,14 @@
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding: 8px;
+    border: solid 2px #CCCCCC;
+}
+
+.characterContainer {
+    display : felx;
+    flex-direction: column;
+    gap: 8px;
+    padding: 6px 15px 6px 0px;
+}
