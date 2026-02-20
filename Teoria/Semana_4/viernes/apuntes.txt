@@ -2,3 +2,5 @@ Que hace NEXT:
     enrutado automatico
     optimizacion automatica
     gestion de renderizado
+
+Link llama a otro html y router hace un rutado virtual
