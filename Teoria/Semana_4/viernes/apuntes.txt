@@ -1,0 +1,4 @@
+Que hace NEXT:
+    enrutado automatico
+    optimizacion automatica
+    gestion de renderizado
