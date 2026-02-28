@@ -5,6 +5,7 @@ import { Drink } from "@/types";
 import { AxiosError } from "axios";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import "./drink.css"
 
 const getId = () => {
 
@@ -31,21 +32,30 @@ const getId = () => {
 
 
     return (
-         <div>
-            <h1>Recibiendo el id: {id}</h1>
-            <p> Nombre : {cocktail?.strDrink}</p>
-            {!cocktail && loading && <p>Loading...</p>}
-            {error && <p>Error: {error}</p>}
+         <div className="mainContainer">
             {!loading && !error && cocktail && (
                 <>
-                    <img src ={cocktail.strDrinkThumb}></img>
-                    <p>Nombre: {cocktail?.strDrink}</p>
-              
-                </>
-            ) }           
+                    <img src={cocktail?.strDrinkThumb}></img>
 
-            <button onClick={()=> router.back()}>Volver</button>
+                    <div className="drinkDataContainer">
+                    
+                    <p>Nombre: {cocktail?.strDrink}</p>
+                    <p>Nombre: {cocktail?.strDrink}</p>
+                    <p>Nombre: {cocktail?.strDrink}</p>
+                    <p>Nombre: {cocktail?.strDrink}</p>
+                    <p>Nombre: {cocktail?.strDrink}</p>
+                    <p>Nombre: {cocktail?.strDrink}</p>
+                    <p>Nombre: {cocktail?.strDrink}</p>
+
+                     <button onClick={()=> router.back()}>Volver</button>
+                    </div>
+                </>
+            )}   
+                    
+            {!cocktail && loading && <p>Loading...</p>}
+            {error && <p>Error: {error}</p>}
         </div>
+        
 
     )
 };

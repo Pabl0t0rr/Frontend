@@ -5,6 +5,7 @@ import { Drink } from "@/types";
 import { AxiosError } from "axios";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
+import "./drink.css"
 
 const Home = () => {
 
@@ -55,19 +56,18 @@ const Home = () => {
       drinks.map((drinks) => {
         return (
           <>
-            <div className="mainContainer">
+            <div className="mainContainer" key = {drinks.idDrink}>
               <button onClick={() => {
                 router.push("/drink/"+ drinks.idDrink)
               }}>
                 {drinks?.strDrinkThumb && <img src = {drinks.strDrinkThumb}></img>}
-                <div className="characterDataContainer">
+                <div className="drinkDataContainer">
                   <p>Name: {drinks?.strDrink}</p>
                   <p>Category: {drinks?.strCategory}</p>
                   <p>Glass: {drinks?.strGlass}</p>
 
                 </div>
               </button>
-              <div key = {drinks.idDrink}></div>
             </div>
           </>
         )
