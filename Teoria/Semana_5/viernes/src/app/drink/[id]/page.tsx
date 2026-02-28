@@ -10,15 +10,18 @@ const getId = () => {
 
     const {id} = useParams();
 
-    const [cocktail, setCocktail] = useState<Drink | null>(null);
-    const [loading, setLoading] = useState<Boolean>(true);
-    const [error, setError] = useState<string | null> (null);
-
     const router = useRouter();
 
+    const [cocktail, setCocktail] = useState<Drink | null>(null);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null> (null);
+
+    
+
     useEffect(() => {
+
         getCocktailById(Number(id)).then ( (res : any) => {
-            setCocktail(res);
+            setCocktail(res.drinks[0]);
         }).catch((err: AxiosError) => {
             setError(err.message);
         }).finally(() => {
@@ -30,14 +33,16 @@ const getId = () => {
     return (
          <div>
             <h1>Recibiendo el id: {id}</h1>
-            {!cocktail && loading && <p>Cargando...</p>}
+            <p> Nombre : {cocktail?.strDrink}</p>
+            {!cocktail && loading && <p>Loading...</p>}
             {error && <p>Error: {error}</p>}
-            
+            {!loading && !error && cocktail && (
                 <>
-                <p>Nombre: {cocktail?.strDrink}</p>
-                <p></p>
+                    <img src ={cocktail.strDrinkThumb}></img>
+                    <p>Nombre: {cocktail?.strDrink}</p>
+              
                 </>
-            
+            ) }           
 
             <button onClick={()=> router.back()}>Volver</button>
         </div>

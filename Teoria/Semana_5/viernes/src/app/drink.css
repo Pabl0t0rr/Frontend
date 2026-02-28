@@ -1,0 +1,19 @@
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding: 8px;
+    border: solid 2px #CCCC;
+}
+
+.mainContainer img {
+    width: 80%;
+}
+
+
+.characterDataContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    padding: 6px 15px 6px 0px;
+}
