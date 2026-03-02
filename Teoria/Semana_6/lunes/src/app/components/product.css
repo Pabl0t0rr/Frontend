@@ -1,0 +1,9 @@
+
+.productos{
+    cursor: pointer;
+}
+
+.productos:hover {
+    background-color: red;
+    border: 2px solid black;
+}
