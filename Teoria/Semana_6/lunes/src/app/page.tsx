@@ -23,7 +23,7 @@ const Home = () => {
       <div>
         {lista.map((p) => {
           return <div>
-                  <h2 key = {p.id}>Lista de la compra: {p.name}</h2>
+                  <h2 className = "borrarItem" key = {p.id}>Lista de la compra: {p.name}</h2>
                   <button onClick={() => {
                     setLista(lista.filter((e) => e.id !== p.id))
                   }}>Eliminar</button>
