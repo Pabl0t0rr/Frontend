@@ -22,7 +22,13 @@ const Home = () => {
     <div className="page">
       <div>
         {lista.map((p) => {
-          return <h2 key = {p.id}>Lista de la compra: {p.name}</h2>
+          return <div>
+                  <h2 key = {p.id}>Lista de la compra: {p.name}</h2>
+                  <button onClick={() => {
+                    setLista(lista.filter((e) => e.id !== p.id))
+                  }}>Eliminar</button>
+                 
+                 </div>
         })}
       </div>
       {productos.map((e) => {
