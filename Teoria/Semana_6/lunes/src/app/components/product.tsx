@@ -1,10 +1,11 @@
 'use client';
 
 import "./product.css";
+import { Comprar } from "../page";
 
 type Props = {
-    lista : string [];
-    setLista: React.Dispatch<React.SetStateAction<string[]>>; //Para tipar las funciones
+    lista : Comprar[];
+    setLista: React.Dispatch<React.SetStateAction<Comprar[]>>; //Para tipar las funciones
     name: string;
 }
 
@@ -13,7 +14,7 @@ const Product = ({lista, setLista, name}: Props) => {
     
     return (
         <div className="productos" onClick={() => {
-                setLista([...lista, name])
+                setLista([...lista, {name: name, id: String(Math.random())}])
             }}>
             <h1>{name.toUpperCase()}</h1>
             
