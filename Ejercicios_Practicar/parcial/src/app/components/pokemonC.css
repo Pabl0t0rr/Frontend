@@ -1,0 +1,27 @@
+.pokemonCardContainer {
+   background: white;
+   color: black;
+   border-radius: 14px;
+   width: 200px;
+   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.pokemonCardContainer button {
+   background: none;
+   border: none;
+   width: 100%;
+   padding: 15px;
+   cursor: pointer;
+}
+
+.pokemonCardInfoContainer {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+.pokemonCardInfoContainer p {
+   margin: 0;
+   font-size: 14px;
+   text-transform: capitalize;
+}
