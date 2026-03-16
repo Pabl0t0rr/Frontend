@@ -1,0 +1,19 @@
+.container {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw; /* vw/vw es relativo al padre */
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerContainer {
+  background-color: white;
+  width: 40%;
+  min-height: 240px;
+  padding: 25px;
+  pointer-events: none; /*hace que no reaccione al click */
+}
