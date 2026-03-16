@@ -1,63 +1,58 @@
-'use client'
+"use client";
 
-import { getCocktailById} from "@/lib/api/cocktail";
+import { getCocktailById } from "@/lib/api/cocktail";
 import { Drink } from "@/types";
 import { AxiosError } from "axios";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import "./drink.css"
+import "./drink.css";
 
 const getId = () => {
+  const { id } = useParams();
 
-    const {id} = useParams();
+  const router = useRouter();
 
-    const router = useRouter();
+  const [cocktail, setCocktail] = useState<Drink | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
-    const [cocktail, setCocktail] = useState<Drink | null>(null);
-    const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null> (null);
+  useEffect(() => {
+    getCocktailById(Number(id))
+      .then((res: any) => {
+        setCocktail(res.drinks[0]);
+      })
+      .catch((err: AxiosError) => {
+        setError(err.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [id]);
 
-    
+  return (
+    <div className="mainContainer">
+      {!loading && !error && cocktail && (
+        <>
+          <img src={cocktail?.strDrinkThumb}></img>
 
-    useEffect(() => {
+          <div className="drinkDataContainer">
+            <p>Nombre: {cocktail?.strDrink}</p>
+            <p>Nombre: {cocktail?.strDrink}</p>
+            <p>Nombre: {cocktail?.strDrink}</p>
+            <p>Nombre: {cocktail?.strDrink}</p>
+            <p>Nombre: {cocktail?.strDrink}</p>
+            <p>Nombre: {cocktail?.strDrink}</p>
+            <p>Nombre: {cocktail?.strDrink}</p>
 
-        getCocktailById(Number(id)).then ( (res : any) => {
-            setCocktail(res.drinks[0]);
-        }).catch((err: AxiosError) => {
-            setError(err.message);
-        }).finally(() => {
-            setLoading(false);
-        })
-    },  [id])
+            <button onClick={() => router.back()}>Volver</button>
+          </div>
+        </>
+      )}
 
-
-    return (
-         <div className="mainContainer">
-            {!loading && !error && cocktail && (
-                <>
-                    <img src={cocktail?.strDrinkThumb}></img>
-
-                    <div className="drinkDataContainer">
-                    
-                    <p>Nombre: {cocktail?.strDrink}</p>
-                    <p>Nombre: {cocktail?.strDrink}</p>
-                    <p>Nombre: {cocktail?.strDrink}</p>
-                    <p>Nombre: {cocktail?.strDrink}</p>
-                    <p>Nombre: {cocktail?.strDrink}</p>
-                    <p>Nombre: {cocktail?.strDrink}</p>
-                    <p>Nombre: {cocktail?.strDrink}</p>
-
-                     <button onClick={()=> router.back()}>Volver</button>
-                    </div>
-                </>
-            )}   
-                    
-            {!cocktail && loading && <p>Loading...</p>}
-            {error && <p>Error: {error}</p>}
-        </div>
-        
-
-    )
+      {!cocktail && loading && <p>Loading...</p>}
+      {error && <p>Error: {error}</p>}
+    </div>
+  );
 };
 
 export default getId;
