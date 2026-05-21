@@ -1,3 +1,5 @@
+import { LocationT } from "./location";
+
 export type CharacterT = {
   id: number;
   name: string;
@@ -5,15 +7,10 @@ export type CharacterT = {
   species: string;
   type: string;
   gender: string;
-  origin: Location;
-  location: Location;
+  origin: LocationT;
+  location: LocationT;
   image: string;
   episode: string[];
   url: string;
   created: Date;
-};
-
-export type Location = {
-  name: string;
-  url: string;
 };
