@@ -1,8 +1,8 @@
-import { Character } from "./character";
+import { CharacterT } from "./character";
 
 export type CharacterResult = {
   info: InfoT;
-  results: Character[];
+  results: CharacterT[];
 };
 
 export type InfoT = {

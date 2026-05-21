@@ -12,17 +12,31 @@ const CharacterPage = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [page, setPage] = useState<number>(1);
+  const [filter, setFilter] = useState<string>("");
+  const [finalFilter, setFinalFilter] = useState<string>("");
 
   useEffect(() => {
-    getCharacters(page)
+    getCharacters(page, finalFilter)
       .then((e) => setresultCharacters(e))
       .catch((err: AxiosError) => setError(err.message))
       .finally(() => setLoading(false));
-  }, [page]);
+  }, [page, finalFilter]);
 
   return (
     <div>
       <h1>Character Page</h1>
+      <div className="charaterFilter">
+        <input
+          onChange={(e) => setFilter(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key == "Enter") {
+              setFinalFilter(filter);
+            }
+          }}
+          placeholder="Search by name..."
+        />
+        <button onClick={() => setFinalFilter(filter)}>Search Name</button>
+      </div>
 
       {resultCharacters &&
         resultCharacters.results.map((e) => (

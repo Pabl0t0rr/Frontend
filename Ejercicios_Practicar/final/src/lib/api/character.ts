@@ -1,8 +1,10 @@
 import { CharacterResult, CharacterT } from "@/types";
 import { api } from "./api";
 
-export const getCharacters = async (page: number) => {
-  const response = await api.get<CharacterResult>("/character?page=" + page);
+export const getCharacters = async (page: number, filter?: string) => {
+  const response = await api.get<CharacterResult>(
+    "/character?page=" + page + (filter ? "&name=" + filter : ""),
+  );
   return response.data;
 };
 
