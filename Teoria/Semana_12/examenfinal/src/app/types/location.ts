@@ -1,0 +1,16 @@
+import { InfoT } from "./pagination";
+
+export type ResultLocationsT = {
+  info: InfoT;
+  results: Result[];
+};
+
+export type Result = {
+  id: number;
+  name: string;
+  type: string;
+  dimension: string;
+  residents: string[];
+  url: string;
+  created: Date;
+};
