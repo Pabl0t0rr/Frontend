@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import "./styles.css";
 const NavigatorPage = () => {
   type NavItem = {
     name: string;
@@ -14,12 +14,13 @@ const NavigatorPage = () => {
   ];
   return (
     <div className="navContainer">
-      <h1 className="navTitle">Navigator</h1>
-      {enlaces.map((e) => (
-        <Link className="navLink" key={e.url} href={e.url}>
-          {e.name}
-        </Link>
-      ))}
+      {enlaces.map((e) => {
+        return (
+          <Link className="navLink" key={e.url} href={e.url}>
+            {e.name}
+          </Link>
+        );
+      })}
     </div>
   );
 };

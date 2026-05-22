@@ -1,0 +1,25 @@
+.navContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  gap: 5px;
+}
+
+.navLink {
+  display: flex;
+  padding: 7px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  background-color: black;
+  color: white;
+  transition: background-color 0.5s;
+}
+
+.navLink:hover {
+  background-color: rgb(140, 140, 140);
+}

@@ -1,0 +1,12 @@
+.homeContainer {
+  width: 400px;
+  height: 400px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, #4f46e5, #7c3aed, #ec4899);
+  color: white;
+  padding: 0px 0px 0px 0px;
+}
