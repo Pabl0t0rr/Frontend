@@ -5,6 +5,7 @@ import { getLocations } from "@/lib/api/location";
 import { LocationResult } from "@/types/results";
 import Paginador from "../components/Paginator";
 import Location from "../components/Location";
+import "./stylces.css";
 const LocationsPage = () => {
   const [resultLocations, setResultLocations] = useState<LocationResult | null>(
     null,
@@ -22,7 +23,7 @@ const LocationsPage = () => {
       .finally(() => setLoading(false));
   }, [page, finalLocation]);
   return (
-    <div>
+    <div className="locationMainContainer">
       <h1>Locations Page</h1>
       <div className="locationFilter">
         <input
