@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import Paginador from "../components/Paginator";
 import { EpisodeResult } from "@/types";
 import Episode from "../components/Episode";
+import "./styles.css";
 
 const EpisodesPage = () => {
   const [episodes, setEpisodes] = useState<EpisodeResult | null>(null);
@@ -23,7 +24,7 @@ const EpisodesPage = () => {
   }, [page, finalNumberEpisode]);
 
   return (
-    <div>
+    <div className="episodeMainContainer">
       <h1>Episode Page</h1>
       <div className="episodeFilter">
         <input
