@@ -1,4 +1,4 @@
-.characterContainer {
+.characterMainContainer {
   width: 100%;
 
   display: flex;
@@ -15,7 +15,6 @@
   align-items: center;
 
   gap: 10px;
-  margin: 20px;
 }
 
 .charaterFilter input {

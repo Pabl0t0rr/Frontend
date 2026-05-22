@@ -24,7 +24,7 @@ const CharacterPage = () => {
   }, [page, finalFilter]);
 
   return (
-    <div className="characterContainer">
+    <div className="characterMainContainer">
       <h1>Character Page</h1>
       <div className="charaterFilter">
         <input
