@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import NavigatorPage from "./components/Navigator/Navigator";
+import NavigatorPage from "./components/Navigator";
 
 export const metadata: Metadata = {
   title: "Repaso FInal Rick and Morty",
