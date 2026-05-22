@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "./layout.css";
 import NavigatorPage from "./components/Navigator";
 
 export const metadata: Metadata = {
@@ -16,8 +16,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <NavigatorPage />
-        {children}
+        <div className="mainContainer">
+          <div className="titleMainContainer">
+            <h1>Ejercicio practica Rick</h1>
+          </div>
+          <NavigatorPage />
+          {children}
+        </div>
       </body>
     </html>
   );

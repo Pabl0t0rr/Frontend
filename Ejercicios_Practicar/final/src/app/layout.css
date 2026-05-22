@@ -1,0 +1,29 @@
+.mainContainer {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 20px;
+  padding: 30px;
+
+  background-color: rgb(64, 71, 173);
+}
+
+.titleMainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
+  border-radius: 15px;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.titleMainContainer h1 {
+  color: #fabada;
+}
