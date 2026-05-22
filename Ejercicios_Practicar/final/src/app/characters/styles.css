@@ -1,0 +1,52 @@
+.characterContainer {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+}
+
+.charaterFilter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+  margin: 20px;
+}
+
+.charaterFilter input {
+  width: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+  padding: 12px 16px;
+
+  background-color: rgba(11, 0, 27, 0.1);
+
+  border-radius: 10px;
+}
+
+.charaterFilter button {
+  padding: 12px 16px;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  background-color: rgb(28, 48, 81);
+  color: white;
+
+  transition: background-color 0.5s;
+}
+
+.charaterFilter button:hover {
+  background-color: rgb(3, 3, 151);
+}

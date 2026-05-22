@@ -6,6 +6,7 @@ import { CharacterResult } from "@/types";
 import Character from "../components/Character";
 import { getCharacters } from "@/lib/api/character";
 import { AxiosError } from "axios";
+import "./styles.css";
 const CharacterPage = () => {
   const [resultCharacters, setresultCharacters] =
     useState<CharacterResult | null>(null);
@@ -23,7 +24,7 @@ const CharacterPage = () => {
   }, [page, finalFilter]);
 
   return (
-    <div>
+    <div className="characterContainer">
       <h1>Character Page</h1>
       <div className="charaterFilter">
         <input
