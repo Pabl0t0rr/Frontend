@@ -25,7 +25,7 @@ const CharacterPage = () => {
   }, [page, finalFilter]);
 
   return (
-    <div>
+    <div className="caracterPageContainer">
       <h1>Character page</h1>
 
       {characters &&

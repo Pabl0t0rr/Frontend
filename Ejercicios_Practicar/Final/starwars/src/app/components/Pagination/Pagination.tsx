@@ -1,3 +1,5 @@
+import "./styles.css";
+
 const Pagination = ({
   next,
   prev,
@@ -20,7 +22,7 @@ const Pagination = ({
       <h1>{page}</h1>
 
       {next && (
-        <div className="pageNext" onClick={() => setPage(page + 1)}>
+        <div className="pagNext" onClick={() => setPage(page + 1)}>
           {">"}
         </div>
       )}

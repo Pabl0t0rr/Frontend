@@ -1,0 +1,26 @@
+.layoutContainer {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  background-color: darkgray;
+  color: white;
+
+  gap: 20px;
+  padding: 10px 5px;
+}
+
+.layoutTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
+  border-radius: 20%;
+
+  background-color: rgba(80, 74, 74, 0.5);
+}

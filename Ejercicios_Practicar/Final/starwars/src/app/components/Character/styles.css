@@ -1,0 +1,19 @@
+.characterContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 20px;
+  background-color: rgb(123, 122, 114);
+
+  cursor: pointer;
+}
+
+.infoCharacterContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: white;
+}

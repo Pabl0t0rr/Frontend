@@ -4,6 +4,8 @@ import { AxiosError } from "axios";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
+import "./styles.css";
+
 type Props = {
   character: CharacterRes;
 };
@@ -23,13 +25,14 @@ const Character = ({ character }: Props) => {
   }, [character.uid]);
 
   return (
-    <div>
-      <button
-        className=""
-        onClick={() => router.push("/characters/" + character.uid)}
-      >
-        <h1> {characterD?.name} </h1>
-      </button>
+    <div
+      className="characterContainer"
+      onClick={() => router.push("/characters/" + character.uid)}
+    >
+      <h1> {characterD?.name} </h1>
+      <div className="infoCharacterContainer">
+        <p>{characterD?.birth_year}</p>
+      </div>
     </div>
   );
 };

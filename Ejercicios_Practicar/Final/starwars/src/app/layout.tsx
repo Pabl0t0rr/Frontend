@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Navigator from "./components/Navigator/Navigator";
+import "./layout.css";
 
 export const metadata: Metadata = {
   title: "Repaso Final Star Wars",
@@ -15,7 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div>
+        <div className="layoutContainer">
+          <div className="layoutTitle">
+            <h1>Ejercicio Star wars</h1>
+          </div>
           <Navigator />
           {children}
         </div>

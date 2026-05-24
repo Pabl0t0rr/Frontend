@@ -1,0 +1,29 @@
+.pagContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagPrev,
+.pagNext {
+  height: 50px;
+  width: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgb(123, 122, 114);
+  color: white;
+
+  border-radius: 50%;
+
+  transition: transform 1s;
+}
+
+.pagNext:hover,
+.pagPrev:hover {
+  transform: scale(1.2);
+}

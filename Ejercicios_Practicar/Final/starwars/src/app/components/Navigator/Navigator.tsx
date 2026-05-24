@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "./styles.css";
 
 const Navigator = () => {
   type list = {
@@ -18,8 +19,7 @@ const Navigator = () => {
   ];
 
   return (
-    <div>
-      <h1>Navigator</h1>
+    <div className="navContainer">
       {links.map((e) => {
         return (
           <Link className="navLink" key={e.url} href={e.url}>
